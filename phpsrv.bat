@@ -30,7 +30,7 @@ GOTO :SUCCESS
 
 :NOTFOUND
 ECHO No such folder.
-SET /P CREATEFOLDERPROMPT=Do you want to create it (Y/[N])
+SET /P CREATEFOLDERPROMPT="Do you want to create it (Y/[N])"
 IF /I "%CREATEFOLDERPROMPT%" EQU "Y" (
         MKDIR %TARGETFOLDER%
         CD %TARGETFOLDER%
