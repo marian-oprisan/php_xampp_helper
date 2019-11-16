@@ -32,15 +32,15 @@ GOTO :SUCCESS
 ECHO No such folder.
 SET /P CREATEFOLDERPROMPT="Do you want to create it (Y/[N])"
 IF /I "%CREATEFOLDERPROMPT%" EQU "Y" (
-        MKDIR %TARGETFOLDER%
-        CD %TARGETFOLDER%
-        GOTO :SUCCESS
+    MKDIR %TARGETFOLDER%
+    CD %TARGETFOLDER%
+    GOTO :SUCCESS
+) ELSE (
+    ECHO Here are your choices:
+    DIR /a:d /w /b %ROOTDIR%
 )
 GOTO :EOF
 
 :SUCCESS
 ECHO %1 > %ROOTDIR%activedir.txt
 GOTO :EOF
-
-ECHO Here are your choices:
-DIR /a:d /w /b %ROOTDIR%
